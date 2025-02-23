@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f9f9f9;
+    color: #333;
+}
+
+.top {
+    height: 800px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("https://ik.imagekit.io/fu4uxhoyq/Beige%20Retro%20Photo%20Collage%20Personal%20Facebook%20Cover.png?updatedAt=1740330951117");
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.top-text {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.nbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    z-index: 10;
+}
+
+.nbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nbar ul li {
+    padding: 10px;
+}
+
+.nbar a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.nbar a:hover {
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+}
+
+/* About Section */
+#about {
+    background-color: white;
+    padding: 40px 10%;
+    text-align: center;
+    margin-top: -50px; /* Pulls the section upwards */
+    z-index: 1;
+}
+
+#about h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Spotlight Section */
+#spotlights {
+    text-align: center;
+    padding: 40px 10%;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .post-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .post img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .post-text {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .post-text h3 {
+        font-size: 20px;
+    }
+
+    .post-text p {
+        font-size: 16px;
+    }
+
+    .post-text a {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer a {
+    color: white;
+    font-weight: 500;
+}
+
+footer .social-links {
+    margin-top: 10px;
+}
+
+footer .social-links a {
+    margin: 0 10px;
+    font-size: 18px;
+}

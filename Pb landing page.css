@@ -10,35 +10,46 @@ body {
     color: #333;
 }
 
+/* 🔹 Responsive Top Section */
 .top {
-    height: 800px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-image: url("https://ik.imagekit.io/fu4uxhoyq/Beige%20Retro%20Photo%20Collage%20Personal%20Facebook%20Cover.png?updatedAt=1740330951117");
-    position: relative;
+    width: 100%;
+    min-height: 750px; /* Ensures the section has enough space */
+    background: url("https://ik.imagekit.io/fu4uxhoyq/Beige%20Retro%20Photo%20Collage%20Personal%20Facebook%20Cover.png?updatedAt=1740330951117") no-repeat center center / cover;
     display: flex;
-    justify-content: center;
     align-items: center;
-    color: white;
-}
-
-.top-text {
+    justify-content: center;
     text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    padding-top: 30px;
+    position: relative;
 }
 
+/* Ensures background image is fully visible on all devices */
+@media (max-width: 1024px) {
+    .top {
+        min-height: 400px;
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .top {
+        min-height: 350px;
+        background-size: contain;
+        background-position: center;
+    }
+}
+
+/* 🔹 Navigation Bar */
 .nbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px;
-    position: absolute;
-    top: 20px;
+    padding: 20px;
     width: 100%;
-    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .nbar ul {
@@ -48,14 +59,15 @@ body {
 }
 
 .nbar ul li {
-    padding: 10px;
+    padding: 5px;
+    
 }
-
 .nbar a {
     text-decoration: none;
     color: black;
     font-size: 16px;
     font-weight: bold;
+
 }
 
 .nbar a:hover {
@@ -64,44 +76,40 @@ body {
     border-radius: 5px;
 }
 
-.logo-container {
-    display: flex;
-    align-items: center;
-}
-
-.logo {
-    height: 50px;
-    width: auto;
-}
-
-/* About Section */
+/* 🔹 About Section */
 #about {
-    background-color: white;
-    padding: 40px 10%;
     text-align: center;
-    margin-top: -50px; /* Pulls the section upwards */
-    z-index: 1;
+    padding: 60px 20px;
+    background: #fff;
 }
 
 #about h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
+    font-size: 28px;
+    margin-bottom: 10px;
 }
 
 #about p {
+    max-width: 800px;
+    margin: 0 auto;
     font-size: 18px;
     line-height: 1.6;
 }
 
-/* Spotlight Section */
+/* 🔹 Featured Story Section */
 #spotlights {
     text-align: center;
-    padding: 40px 0;
+    padding: 50px 20px;
 }
 
+#spotlights h1 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+/* 🔹 Featured Posts */
 .post {
     background: white;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     margin: 20px auto;
@@ -118,60 +126,82 @@ body {
 }
 
 .post img {
-    width: 50%;
-    max-width: 400px;
-    height: auto;
+    width: 250px;
+    height: 150px;
+    object-fit: cover;
     border-radius: 10px;
 }
 
 .post-text {
-    width: 50%;
+    max-width: 55%;
     text-align: left;
 }
 
-/* Alternate layout for even posts */
-.post:nth-child(even) .post-content {
-    flex-direction: row-reverse;
-}
-
 .post-text h3 {
+    margin-top: 15px;
     color: #333;
-    margin-bottom: 10px;
+    font-size: 22px;
 }
 
 .post-text p {
+    margin: 10px 0;
     color: #666;
-    margin-bottom: 15px;
+    font-size: 16px;
 }
 
 .post-text a {
     text-decoration: none;
-    color: #fff;
+    color: #333;
     font-weight: bold;
     padding: 8px 15px;
-    background-color: gray;
+    background-color: bisque;
     border-radius: 5px;
     transition: 0.3s ease;
 }
 
 .post-text a:hover {
-    background-color: beige;
+    background-color: antiquewhite;
+    color: white;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* 🔹 Alternate Positioning for Even Posts */
+.post:nth-child(even) .post-content {
+    flex-direction: row-reverse;
+}
+
+/* 🔹 Responsive Design Fixes */
+@media (max-width: 1024px) {
     .post-content {
-        flex-direction: column !important;
+        flex-direction: column;
         text-align: center;
     }
 
-    .post img,
+    .post img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
     .post-text {
-        width: 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .post-text h3 {
+        font-size: 20px;
+    }
+
+    .post-text p {
+        font-size: 16px;
+    }
+
+    .post-text a {
+        font-size: 14px;
+        padding: 10px 20px;
     }
 }
 
-
+/* 🔹 Footer */
 footer {
     background-color: #333;
     color: white;
